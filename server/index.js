@@ -10,7 +10,7 @@ const bcrypt = require("bcrypt");
 const { authenticate } = require("./utilities");
 const User = require("./models/User");
 const Note = require("./models/Note");
-
+const Port = process.env.PORT || 4000 ;
 connectDb();
 app.use(
   cors({
@@ -265,6 +265,6 @@ return res.json({
 
 
 })
-app.listen(3000, () => console.log("server started on port 3000"));
+app.listen(Port, () => console.log("server started on port 3000"));
 
 module.exports = app;
